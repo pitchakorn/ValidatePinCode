@@ -18,28 +18,28 @@ fun main() {
         }
 }
 
-    private fun validatePinCode(pin: String): Boolean {
-        // Condition 1
-        if (pin.length < 6) {
-            return false
-        }
-        // Condition 2
-        for (i in 0 until pin.length - 2) {
-            if (pin[i] == pin[i + 1] && pin[i] == pin[i + 2]) {
-                return false
-            }
-        }
-        // Condition 3
-        for (i in 0 until pin.length - 2) {
-            if ((pin[i].toInt() + 1 == pin[i + 1].toInt() && pin[i + 1].toInt() + 1 == pin[i + 2].toInt()) ||
-                (pin[i].toInt() - 1 == pin[i + 1].toInt() && pin[i + 1].toInt() - 1 == pin[i + 2].toInt())
-            ) {
-                return false
-            }
-        }
-        // Condition 4
-        if (pin[0] == pin[1] && pin[2] == pin[3] && pin[4] == pin[5]) {
-            return false
-        }
-        return true
+private fun validatePinCode(pin: String): Boolean {
+    // Condition 1
+    if (pin.length < 6) {
+        return false
     }
+    // Condition 2
+    for (i in 0 until pin.length - 2) {
+        if (pin[i] == pin[i + 1] && pin[i] == pin[i + 2]) {
+            return false
+        }
+    }
+    // Condition 3
+    for (i in 0 until pin.length - 2) {
+        if ((pin[i].toInt() + 1 == pin[i + 1].toInt() && pin[i + 1].toInt() + 1 == pin[i + 2].toInt()) ||
+            (pin[i].toInt() - 1 == pin[i + 1].toInt() && pin[i + 1].toInt() - 1 == pin[i + 2].toInt())
+        ) {
+            return false
+        }
+    }
+    // Condition 4
+    if (pin[0] == pin[1] && pin[2] == pin[3] && pin[4] == pin[5]) {
+        return false
+    }
+    return true
+}
